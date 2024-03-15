@@ -1,34 +1,47 @@
 package Gor;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+
+import java.awt.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Point p1 = new Point(1,5);
-        Point p2 = new Point(12,8);
-        Point p3 = new Point(5,3);
-        Point p4 = new Point(8,9);
-        System.out.println("--------------------------------------------------------------");
-        System.out.println("p1 = "+p1);
-        System.out.println("p2 = "+p2);
-        System.out.println("p3 = "+p3);
-        System.out.println("p4 = "+p4);
-        System.out.println("--------------------------------------------------------------");
-        ArrayList<Point> al=new ArrayList<>();
-        al.add(p1);
-        al.add(p2);
-        al.add(p3);
-        al.add(p4);
-        PolyLine pl = new PolyLine(al);
-        System.out.println(pl);
-        System.out.println("--------------------------------------------------------------");
-        System.out.println("Массив линий : "+Arrays.toString(pl.getLines()));
-        System.out.println("Длина ломаной : "+pl.getLength());
-        System.out.println("--------------------------------------------------------------");
 
+    public static void main(String[] args) {
+        Point one = new Point(1, 3); //создал точку, выделил память
+        Point two = new Point(1, 3);
+        Point three = new Point(5, 8);
+
+        System.out.println(one);
+        System.out.println(two);
+        System.out.println(three);
+        System.out.println("Сравнение точек:");
+        System.out.println(one==two);
+        System.out.println(three==two);
+        System.out.println("Выводим линию");
+
+
+
+        Line lineOne = new Line(1, 3, 5, 8);
+        Line lineTwo = new Line(10, 11, 15, 19);
+        Line lineThree = new Line(lineOne.finish, lineTwo.start);
+        System.out.println(lineThree);
+        lineThree.start.x = 99;
+        lineThree.finish.x = 99;
+        System.out.println(lineThree);
+        System.out.println(lineOne.lenght() + lineTwo.lenght() + lineThree.lenght());
+
+
+        PolyLine poly = new PolyLine(new Point(1, 5), new Point(2, 8), new Point(5, 3), new Point(8, 9));
+        double polyLenght = poly.lenght();
+        Line[] lines = poly.tolineArray();
+        double lineLenght = 0;
+        for (int i = 1; i < lineLenght; i++) {
+            lineLenght += lines[i].lenght();
+        }
+        System.out.println(polyLenght == lineLenght);
+        poly.points[1].x = 12;
     }
 }
+
 
 
 
