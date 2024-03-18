@@ -10,8 +10,8 @@ public class Main {
         Point two = new Point(1, 3);
         Point three = new Point(5, 8);
 
-        System.out.println(one);
-        System.out.println(two);
+        System.out.print(one);
+        System.out.print(two);
         System.out.println(three);
         System.out.println("Сравнение точек:");
         System.out.println(one==two);
@@ -39,6 +39,8 @@ public class Main {
         }
         System.out.println(polyLenght == lineLenght);
         poly.points[1].x = 12;
+        System.out.println(poly);
+
     }
 }
 
