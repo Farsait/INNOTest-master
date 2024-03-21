@@ -2,7 +2,7 @@ package ru.courses.INNO.geometry;
 
 import ru.courses.interfaceGeometry.iLines;
 
-public class Line implements iLines {
+public class Line {
     Point p1;
     Point p2;
 
@@ -22,6 +22,4 @@ public class Line implements iLines {
     public String toString(){
         return "{"+p1+";"+p2+"}";
     }
-
-
 }
