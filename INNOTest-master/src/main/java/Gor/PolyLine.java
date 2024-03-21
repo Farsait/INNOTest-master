@@ -1,39 +1,30 @@
 package Gor;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class PolyLine {
-    ArrayList<Point> pl = new ArrayList<>();
-
-    public PolyLine(){    }
-
-    public PolyLine(ArrayList pl){
-        this.pl=pl;
+    Point[]points;
+    public PolyLine(Point... points){
+        this.points=points;
     }
-    public double getLength(ArrayList pl){
-        return 0;
-    }
-
-    public Line[] getLines(){
-        Line res[]=new Line[this.pl.size()-1];
-        for (int i=0;i<(this.pl.size()-1);i++){
-            res [i]= new Line(pl.get(i),pl.get(i+1));
+    public Line[] tolineArray(){
+        Line[]arr=new Line[points.length-1];
+        for (int i=1; i< points.length; i++){
+            arr[i-1]=new Line(points[i-1],points[i]);
         }
-        return res;
+        return arr;
     }
-    public double getLength(){
-        double res=0;
-        Line l;
-        for (int i=0;i<(this.pl.size()-1);i++){
-            l= new Line(this.pl.get(i),this.pl.get(i+1));
-            res=res+l.getLength();
+      public double lenght(){
+        Line[] lines=tolineArray();
+        double sum=0;
+        for (int i=0; i< lines.length;i++){
+            sum+=lines[i].lenght();
         }
-        return res;
+        return sum;
     }
-
-
     public String toString(){
-        return "Линия "+pl;
+
+        return "Line{" + Arrays.toString(points) + '}';
     }
+
 }

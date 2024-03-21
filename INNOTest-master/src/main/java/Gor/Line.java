@@ -1,23 +1,29 @@
 package Gor;
 
-public class Line {
-    Point p1;
-    Point p2;
+class Line {
+    Point start;
+    Point finish;
 
-    public Line(Point p1, Point p2) {
-        this.p1 = p1;
-        this.p2 = p2;
+    //конструктор точек
+    public Line(Point start, Point finish){
+        this.start=start;
+        this.finish=finish;
     }
-    public Line(int x1,int y1, int x2, int y2) {
-        this.p1 = new Point(x1,y1);
-        this.p2 = new Point(x2,y2);
+
+    //конструктор линии
+    public Line(int x1, int y1, int x2, int y2){
+        this(new Point(x1,y1),new Point(x2,y2));
+
     }
-    public double getLength(){
-        double res=0;
-        res =  Math.sqrt((this.p2.x-this.p1.x)*(this.p2.x-this.p1.x)+(this.p2.y-this.p1.y)*(this.p2.y-this.p1.y));
-        return res;
+    //метод
+    public double lenght(){
+        int catetOne= start.x-finish.x;
+        int catetTwo=start.y-finish.y;
+        return Math.sqrt(catetTwo*catetOne+catetTwo*catetOne);
     }
     public String toString(){
-        return "{"+p1+";"+p2+"}";
+
+        return "Line start" + start +"Line over" + finish;
     }
+
 }

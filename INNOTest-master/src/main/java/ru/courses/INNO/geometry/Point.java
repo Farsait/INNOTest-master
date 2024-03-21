@@ -1,4 +1,4 @@
-package Gor;
+package ru.courses.INNO.geometry;
 
 public class Point {
     int x; //переменные создал

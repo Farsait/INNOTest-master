@@ -39,6 +39,7 @@ public class Main {
         }
         System.out.println(polyLenght == lineLenght);
         poly.points[1].x = 12;
+
     }
 }
 
