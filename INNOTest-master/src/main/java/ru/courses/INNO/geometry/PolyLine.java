@@ -1,10 +1,9 @@
 package ru.courses.INNO.geometry;
 
-import ru.courses.interfaceGeometry.iLines;
-
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class PolyLine implements iLines {
+public class PolyLine {
     ArrayList<Point> pl = new ArrayList<>();
 
     public PolyLine(){    }
@@ -23,7 +22,6 @@ public class PolyLine implements iLines {
         }
         return res;
     }
-
     public double getLength(){
         double res=0;
         Line l;
@@ -35,9 +33,7 @@ public class PolyLine implements iLines {
     }
 
 
-
     public String toString(){
         return "Линия "+pl;
     }
-
 }

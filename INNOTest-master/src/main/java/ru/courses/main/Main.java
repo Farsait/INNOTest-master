@@ -1,4 +1,4 @@
-package ru.courses.INNO.main;
+package ru.courses.main;
 
 import ru.courses.INNO.geometry.Point;
 import ru.courses.INNO.geometry.PolyLine;
